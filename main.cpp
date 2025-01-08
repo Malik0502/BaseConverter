@@ -31,6 +31,22 @@ std::stack<int> division(int divisor, const std::string &num) {
     return result;
 }
 
+std::stack<int> multiplication(int product, const std::string &num)
+{
+    // Kein Punkt bei Float daher falsche Berechnung
+    std::stack<int> result;
+    float fractionalPart = std::stof(num);
+    while (fractionalPart > 0)
+    {
+        fractionalPart = product * fractionalPart;
+        std::string testAsString = std::to_string(fractionalPart);
+        result.push(std::stoi(testAsString));
+        fractionalPart = std::stof(testAsString);
+    }
+    return result;
+
+}
+
 std::vector<int> stackToVector(std::stack<int> stack) {
     std::vector<int> result;
 
@@ -58,18 +74,24 @@ std::string mapToHexValues(const std::stack<int>& input) {
 }
 
 std::string convertToHex(const std::string &num) {
+    std::string output;
     if (num.find('.')) {
 
         std::array<std::string,2> numParts = split(num);
-        std::stack<int> divisionStack = division(16, numParts[0]);
-        std::string output = mapToHexValues(divisionStack);
+        std::stack<int> stack = division(16, numParts[0]);
+        output = mapToHexValues(stack);
         output += '.';
-        // Für Nachkommastellen muss ich noch die Funktion mit Multiplizieren schreiben.
+
+
+        // Map To Hex Values funktioniert beim zweiten mal nicht so gut.
+        stack = multiplication(16, numParts[1]);
+        output += mapToHexValues(stack);
     }
+    return output;
 
 }
 
 int main() {
-    convertToHex("3287.237867");
+    std::cout << convertToHex("18.765625") << std::endl;
 }
 
