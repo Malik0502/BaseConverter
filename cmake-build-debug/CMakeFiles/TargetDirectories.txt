@@ -1,3 +1,3 @@
-/Users/malik/CLionProjects/BaseConverter/cmake-build-debug/CMakeFiles/BaseConverter.dir
-/Users/malik/CLionProjects/BaseConverter/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/malik/CLionProjects/BaseConverter/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/Malik/Desktop/Stuff/Programmieren/C++/BaseConverter/cmake-build-debug/CMakeFiles/BaseConverter.dir
+C:/Users/Malik/Desktop/Stuff/Programmieren/C++/BaseConverter/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Malik/Desktop/Stuff/Programmieren/C++/BaseConverter/cmake-build-debug/CMakeFiles/rebuild_cache.dir
