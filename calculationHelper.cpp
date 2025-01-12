@@ -32,5 +32,4 @@ std::stack<int> calculationHelper::multiplication(int product, std::string num)
         fractionalPart = std::stof("0." + splitted[1]);
     }
     return dataStrucConverter.vectorToStack(result);
-
 }

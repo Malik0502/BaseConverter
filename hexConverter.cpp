@@ -26,9 +26,24 @@ std::string hexConverter::mapToHexValues(const std::stack<int>& input) {
     return output;
 }
 
+std::string hexConverter::mapToDecimalValues(const std::stack<std::string>& input) {
+    std::map<char,int> map = {{'A', 10},{'B', 11},{'C',12},{'D', 13},{'E', 14},{'F', 15},};
+    std::string output;
+    std::vector<std::string> rest = dataStrucConverter.stackToVector(input);
+    for (std::string value : rest) {
+        if (!map.contains(value.c_str()[0])) {
+            output += value;
+        }
+        else {
+            output += map[value.c_str()[0]];
+        }
+    }
+    return output;
+}
+
 std::string hexConverter::convertToHex(const std::string &num) {
     std::string output;
-    if (num.find('.')) {
+    if (num.contains('.')) {
 
         std::array<std::string,2> numParts = strManipulator.split(num);
         std::stack<int> naturalNums = calcHelper.division(16, numParts[0]);
@@ -38,5 +53,13 @@ std::string hexConverter::convertToHex(const std::string &num) {
         naturalNums = calcHelper.multiplication(16, numParts[1]);
         output += mapToHexValues(naturalNums);
     }
+    else {
+        std::stack<int> naturalNums = calcHelper.division(16, num);
+        output = mapToHexValues(naturalNums);
+    }
     return output;
+}
+
+std::string hexConverter:: convertHexToDecimal(const std::string &num) {
+    return "test";
 }
