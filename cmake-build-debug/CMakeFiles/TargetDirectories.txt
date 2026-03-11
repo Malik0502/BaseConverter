@@ -1,3 +1,0 @@
-C:/Users/malik/CLionProjects/BaseConverter/cmake-build-debug/CMakeFiles/BaseConverter.dir
-C:/Users/malik/CLionProjects/BaseConverter/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/malik/CLionProjects/BaseConverter/cmake-build-debug/CMakeFiles/rebuild_cache.dir
